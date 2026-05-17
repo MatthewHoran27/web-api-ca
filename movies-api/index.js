@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
 import usersRouter from './api/users';
+import moviesRouter from './api/movies';  
 import authenticate from './authenticate';
 
 import './db';
@@ -29,6 +30,8 @@ app.use(express.static('public'));
 app.use(express.json());
 
 app.use('/api/users', usersRouter);
+
+app.use('/api/movies', moviesRouter); 
 
 app.use(errHandler);
 
